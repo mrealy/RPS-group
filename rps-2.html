@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors Part 2</title>
+  </head>
+  <body>
+
+    <div id="game">
+
+    </div>
+
+    <div id="tiescore"> </div>
+    <p> Wins: </p>
+    <p id="tiescore"> Ties: </p>
+    <p> Losses: </p>
+
+    <script type="text/javascript">
+
+      // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+      var options = ["r", "p", "s"];
+      var tiecounter = 0;
+
+      // This function is run whenever the user presses a key.
+      document.onkeyup = function(event) {
+      
+        // Determines which key was pressed
+        var userGuess = event.key;
+        // console.log(userGuess);
+
+        // Alerts the key the user pressed (userGuess).
+        alert(userGuess);
+
+        // Randomly chooses a choice from the options array. This is the Computer's guess.
+        var computerGuess = options[Math.floor(Math.random() * options.length)];
+
+        // Alerts the Computer's guess.
+        alert(computerGuess);
+        
+        if (userGuess === computerGuess) {
+          tiecounter = tiecounter + 1;
+          console.log("Yay it works");
+          console.log("Tiescore should equal " + tiecounter);
+        }
+
+        var userGuess = document.getElementById("tiescore");
+
+        };
+
+
+
+    </script>
+
+  </body>
+</html>
